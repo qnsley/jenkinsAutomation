@@ -34,7 +34,7 @@ pipeline {
         stage('Run Playwright Tests') {
             steps {
                 // Run Playwright tests
-                sh 'npx playwright test --project -chromium'
+                sh 'npx playwright test --project'
             }
         }
     }

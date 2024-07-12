@@ -13,10 +13,12 @@ test.describe('running a pipeline test with Jenkins @jenkins', () => {
 
     // mark items as done
     const markDone = await page.getByTestId('todo-item').nth(0)
+    const markDoneTwo = await page.getByTestId('todo-item').nth(1)
 
     // validate those 2 items have been marked
     markDone.getByLabel('Toggle Todo').check()
 
     await expect(markDone).toHaveClass('completed');
+    await expect(markDoneTwo).not.toHaveClass('completed');
   });
 })
