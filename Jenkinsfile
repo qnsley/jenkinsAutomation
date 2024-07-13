@@ -13,16 +13,6 @@ pipeline {
             }
         }
 
-        stage('Install Node.js') {
-            steps {
-                // Install Node.js
-                sh '''
-                curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
-                sudo apt-get install -y nodejs
-                '''
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 // Install project dependencies
@@ -33,7 +23,7 @@ pipeline {
         stage('Run Playwright Tests') {
             steps {
                 // Run Playwright tests
-                sh 'npx playwright test --project'
+                sh 'npx playwright test'
             }
         }
     }
