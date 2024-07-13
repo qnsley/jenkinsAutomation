@@ -17,8 +17,7 @@ pipeline {
             steps {
                 // Install Node.js
                 sh '''
-                curl -sL https://deb.nodesource.com/setup_$NODE_VERSION -o nodesource_setup.sh
-                sudo bash nodesource_setup.sh
+                curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
                 sudo apt-get install -y nodejs
                 '''
             }
